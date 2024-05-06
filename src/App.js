@@ -1,22 +1,39 @@
-
-import './App.css';
-import Form from './components/Form';
-import Header from './components/Header';
-import Searchbar from './components/Searchbar';
-import Transactions from './components/Transactions';
-
+import React, { useState, useEffect } from 'react'
+import './App.css'
+import TransactionForm from './TransactionForm'
+import TransactionTable from './TransactionTable'
 
 function App() {
+  // State to store the list of transactions and the search term
+  const [transactions, setTransactions] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+
+  // Function to handle adding a new transaction
+  const handleAddTransaction = newTransaction => {
+    setTransactions(prevTransactions => [...prevTransactions, newTransaction])
+  };
+
+
   return (
     <div className="App">
-      <Header/>
-      <Searchbar/>
-      <Form/>
-      <Transactions/>
-      
+      {/* Header */}
+      <h1 id='header'>Bank Of Flatiron</h1>
 
+      {/* Transaction Form */}
+      <TransactionForm onAddTransaction={handleAddTransaction} />
+
+      {/* Search Input */}
+      <input
+        type="text"
+        placeholder="Search by description"
+        value={searchTerm}
+        onChange={e => setSearchTerm(e.target.value)}
+      />
+
+      {/* Transaction Table */}
+      <TransactionTable transactions={transactions} searchTerm={searchTerm} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
