@@ -38,7 +38,7 @@ const TransactionForm = ({ onAddTransaction }) => {
 
   return (
     <div className="form-container">
-      <h2>Add Transaction</h2>
+      <h2 id='h2'>Add Transaction</h2>
       <form onSubmit={handleSubmit}>
         {/* Input fields for Date, Description, Category, and Amount */}
         <input
@@ -64,9 +64,9 @@ const TransactionForm = ({ onAddTransaction }) => {
           placeholder="Amount"
           value={amount}
           onChange={e => setAmount(e.target.value)}
-        />
+        />  <br />
         {/* Submit button */}
-        <button type="submit">Add Transaction</button>
+        <button type="submit">Add Transaction</button> 
       </form>
     </div>
   );

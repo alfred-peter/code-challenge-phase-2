@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import TransactionForm from './TransactionForm'
 import TransactionTable from './TransactionTable'
@@ -17,13 +17,13 @@ function App() {
   return (
     <div className="App">
       {/* Header */}
-      <h1 id='header'>Bank Of Flatiron</h1>
+      <h1 id='header'>The Royal Bank Of Flatiron</h1>
 
       {/* Transaction Form */}
       <TransactionForm onAddTransaction={handleAddTransaction} />
 
       {/* Search Input */}
-      <input
+      <input id='searchbar'
         type="text"
         placeholder="Search by description"
         value={searchTerm}
