@@ -32,6 +32,16 @@ const TransactionTable = ({ transactions, searchTerm }) => {
         ))}
       </tbody>
     </table>
+      
+
+      
+      
+      
+      
+      
+      
+      
+  
   )
 }
 

@@ -1,15 +1,25 @@
-import React from 'react'
 
-const DataItem = ({ date, description, category, amount }) => {
-  // Display a row in the table for a single transaction
-  return (
-    <tr>
-      <td>{date}</td> {/* Display the transaction's date */}
-      <td>{description}</td> {/* Display the transaction's description */}
-      <td>{category}</td> {/* Display the transaction's category */}
-      <td>{amount}</td> {/* Display the transaction's amount */}
-    </tr>
-  )
+
+ const DataItem = [{
+  id: 1,
+  date: "24/1/2024",
+  description: "Pizza",
+  category: "Food",
+  amount: 1200,
+},
+{
+  id: 2,
+  date: "11/1/2023",
+  description: "Basketball",
+  category: "Sports",
+  amount: 4500,
+},
+{
+  id: 3,
+  date: "13/11/2022",
+  description: "Beans",
+  category: "Food",
+  amount: 50,
 }
 
-export default DataItem
+]
